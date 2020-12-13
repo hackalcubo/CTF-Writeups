@@ -54,4 +54,4 @@ while True:
         flag += " "
         i+=1
  ```
-We find another file called `maybehere` but reading it doesn't work because it's a directory! So we cd in it and surely the flag is inside. You can check out the final working script in the repo. Finally the flag `kks{Bl1nD_sH311_s2cKs_b4t_Y0U_ar3_amaz19g}`
+We find another file called `maybehere` but reading it doesn't work because it's a directory and the flag is inside! You can check out the final working script in the repo. Finally the flag `kks{Bl1nD_sH311_s2cKs_b4t_Y0U_ar3_amaz19g}`

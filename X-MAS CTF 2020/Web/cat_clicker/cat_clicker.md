@@ -22,7 +22,7 @@ Ever wanted to rescue cats in a game very similar to cookie clicker? If the answ
 
 ## Objective:
 
-Get *13 cats* (limit is *12 cats*) bypassing the `hash (MD5) check` in order to "buy" the flag (flag cost is 13 cats).
+Get *13 cats* (limit is *12 cats*) bypassing the `hash (MD5) check (digital signature)` in order to "buy" the flag (flag cost is 13 cats).
 
 ## Difficulty/Points: 
 `hard/474`

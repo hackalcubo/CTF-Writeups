@@ -3,6 +3,8 @@
   <img src=https://i.postimg.cc/tTryXsX4/1.jpg" />
 </p>
 
+## FLAG:
+`RS{I_h0p3_y0u_scr1pted_th0s3_git_c0ms}`
 #
 ## Solution
 First you need to clone the repository through the command:
@@ -56,5 +58,3 @@ for line in f:
 print(f"[+] FLAG: {flag}")
 f.close()
 ```
-
-**FLAG:** *RS{I_h0p3_y0u_scr1pted_th0s3_git_c0ms}*

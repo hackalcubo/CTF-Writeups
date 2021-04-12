@@ -9,10 +9,10 @@
 ## Difficulty/Points: 
 `Easy/50`
 
-## Flag:
+## FLAG:
 `RS{ikonomov}`
 # 
-## SOLUTION
+## Solution
 Doing a google search for *geno bridgewater linkedin* we can find a LinkedIn profile.
 <p align="center">
   <img src=https://i.postimg.cc/05t9nCyz/2.jpg" />

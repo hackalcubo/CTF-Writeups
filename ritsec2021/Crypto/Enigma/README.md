@@ -5,7 +5,6 @@
 
 #
 ## Solution
-#
 Very simple challenge that recalls the "[Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine)" built during World War II.
 
 Using the [dcode](https://www.dcode.fr/enigma-machine-cipher) application you have the clear solution to which you will only need to add the curly brackets.

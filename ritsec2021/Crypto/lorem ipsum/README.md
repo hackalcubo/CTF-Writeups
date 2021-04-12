@@ -1,4 +1,4 @@
-## lorem ipsum
+# lorem ipsum
 <p align="center">
   <img src=https://i.postimg.cc/d1GqqZPr/lorem-ipsum.jpg" />
 </p>
@@ -17,7 +17,7 @@ Auctor omnipotens.
 ```
 
 #
-# Solution
+## Solution
 Using the [dcode](https://www.dcode.fr/trithemius-ave-maria) application you have the clear solution to which you will only need to add the curly brackets and change some characters from uppercase to lowercase.
 <p align="center">
   <img src=https://i.postimg.cc/kXzWHLcZ/Solution-Enigma.jpg" />

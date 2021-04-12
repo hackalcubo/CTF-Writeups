@@ -9,7 +9,7 @@ Looking at the source of the html we find a single script js tag, I run it simpl
 `GandCrab/Ursnif are dangerous types of campaigns and malware, macros are usually the entry point, see what you can find, there are two flags in this document. Flag1/2`
 
 Opening this document with Libreoffice Writer prompts me about some macros stopped from running for security reasons. Looking the source up we find the flag in plain text.
-![alt text](img)
+![alt text](https://raw.githubusercontent.com/hackalcubo/CTF-Writeups/main/ritsec2021/forensics/PleaseClickAllTheThings1-3/pic_flag.png)
 
 # Part 3
 `Stepping it up to IceID/Bokbot, this challenge is like the previous challenge but requires some ability to read and understand coding in addition to some additional decoding skills, there are two flags in this document. (Flag 1/2)`

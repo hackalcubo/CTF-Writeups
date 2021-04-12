@@ -17,11 +17,12 @@ Aeternus iudex
 Auctor omnipotens.
 ```
 
+## FLAG:
+`RS{ThIsIsTrItHeMiUs}`
+
 #
 ## Solution
 After a short search I saw that it was the *Trithemius Ave Maria* and using the [dcode](https://www.dcode.fr/enigma-machine-cipher) application i got the clear solution to which i added the curly brackets and changed some characters from uppercase to lowercase.
 <p align="center">
   <img src=https://i.postimg.cc/4xLttdLr/Immagine.jpg" />
 </p>
-
-**FLAG:** *RS{ThIsIsTrItHeMiUs}*

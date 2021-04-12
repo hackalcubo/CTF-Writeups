@@ -14,7 +14,7 @@ inside the directory that identifies the local copy of the repository, you can s
 <p align="center">
   <img src=https://i.postimg.cc/Ls8gvZ0H/2.jpg" />
 </p>
-After saving the result, obtained from the previous command, in a file, with the following python script
+After saving the result, obtained from the previous command in a file, with the following python script
 
 ```
 import subprocess

@@ -1,0 +1,10 @@
+The html it had a small form with an input, a button and above it was a picture of some pokemon.
+I tried to send a very long series of inputs that I thought were malicious.
+They are actually inputs like: <script> alert (1) </script>, document.write (flag), 'or 1 = 1; - and at the end the input <? Php echo hello;?> Went well, 
+it incremented me a counter from 0/500 to 1/500. I created a JS script that automated everything for me.
+(function () {
+     'use strict';
+guess.value = "<? php exec hello;?>"; document.forms [0] .submit ();
+     // Your code here ...
+}) ();
+used this, the flag was obtained

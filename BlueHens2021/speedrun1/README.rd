@@ -1,3 +1,21 @@
+# Speedrun1
+
+## Target:
+`challengers.ctfd.io:30025`
+
+## Objective
+modify the cookie to get the "user 1" page
+
+## Difficulty/Points
+simple/`50`
+
+## Flag:
+`UDCTF{d0nt_r0ll_your_0wn_s3ssions}`
+
+# Challenge
+The challenge comes with a very simple textual content, it is a static html page
+
+# Solution
 this site was presented with a very simple static page with written "hello user 2" and that's it.
 I started my backend analysis or I had to understand what kind of technology is behind the page.
 I tried to parse the url by adding parameters like /? User = 1, / login, / home, /../flag.txt and so on.

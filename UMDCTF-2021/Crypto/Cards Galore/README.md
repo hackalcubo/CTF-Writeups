@@ -1,6 +1,6 @@
 # Cards Galore
 
-## Challenge Author(s):
+## Challenge Author:
 `lisichka`
 
 ## Description:

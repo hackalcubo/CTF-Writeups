@@ -4,11 +4,16 @@
 `lisichka`
 
 ## Description:
-[![1.png](https://i.postimg.cc/0y9xPTQ5/1.png)](https://postimg.cc/1f7bKYwb)
+
+<p align="center">
+  <img src=https://i.postimg.cc/Y0Xyt7Fm/ca.jpg" />
+</p>
 
 The following `cards.png` image was provided:
 
-[![cards.png](https://i.postimg.cc/j57Bzc5k/cards.png)](https://postimg.cc/9Rcx2GyG)
+<p align="center">
+  <img src=https://i.postimg.cc/j57Bzc5k/cards.png" />
+</p>
 
 ## Difficulty/Points: 
 `707 points`
@@ -24,7 +29,7 @@ We found this [cipher](https://www.codewars.com/kata/59c2ff946bddd2a2fd00009e) b
 At first we tried decoding manually, noticing that decoding the first row of cards we were obtaining
 `HVBOYG`, and that decoding it with ROT14 cipher we could obtain the string `THNAKS`.
 
-After some adjustments (such as exchanging spades and diamonds in order to obtain the right order), this was the final script to decrypt the cards in the picture and obtain the flag:
+After some adjustments (such as exchanging spades and diamonds in order to obtain the right order), this was the final python script to decrypt the cards in the picture and obtain the flag:
 
 ```
 from string import ascii_lowercase

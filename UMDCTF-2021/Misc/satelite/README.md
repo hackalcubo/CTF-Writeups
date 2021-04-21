@@ -4,7 +4,7 @@
 `itsecgary`
 
 ## Description:
-My friend from Russia sent me this message, but all I see are cryllic[^1] characters?
+My friend from Russia sent me this message, but all I see are cryllic<sup>[1](#footnote1)</sup> characters?
 
 It's given the following `message.txt` file:
 
@@ -37,4 +37,5 @@ The output is:
 
 `UMDCTF-{RIP_sPutN1k_1962}` 
 
-[^1]: Here probably is "cyrillic" but they wrote it wrong, so I kept it like the original.
+# Notes
+<a name="footnote1">1</a>: Here probably is "cyrillic" but they wrote it wrong, so I kept it like the original.

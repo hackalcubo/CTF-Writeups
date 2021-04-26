@@ -14,7 +14,7 @@ The flag is key to understanding this message.
 
 - `cypher.php`:
 
-  ```php+html
+  ```php
   <?php
   
   function secure_crypt($str, $key) {
@@ -58,7 +58,7 @@ The first 6 characters of the flag are `gigem{`.
 
 # Solution
 We tried to decode the first characters of the plaintext using the known part of the key (`gigem{`) ad the cypher itself, slightly modified to avoid the key lenght error:
-```php+html
+```php
 <?php
 function secure_crypt($str, $key) {
 
@@ -93,7 +93,7 @@ We tryed to use the first sentence of the monologue as the key, the output is:
 gi'em;do.t~r/ll>yo5r~ow.~c2ypt/}gigem{d;v|ycgfl>cir2dou`~q&x {|q)~df5nd'ynfd}c9yxw1n{ipa-~zi8fo}knh-sh yb{ox|otin0}w|hs|s"{s2gf3~lrd/{nru/dxdicf/{2nok=xb;{mm|j{hf+z`d1pt)czaar{y{7xb2|mtq
 ```
 The first part of the output resembles a flag, but there are some uncorrectly decrypted character. This behaviour is caused by the presence of the `& 0x1F` operation in the encryption function, which prevents the 3 most significant bits of the text's characters to be encrypted. This is not a big deal when we want to encrypt/decrypt a text but it's a problem when we want to obtain the key from the cypertext and the plaintext. To avoid this problem, it's possible to use a modified version of the chyper that forcibly assign `011` to the 3 most significant bits of the key:
-```php+html
+```php
 <?php
   function secure_crypt_mod($str, $key) {
 

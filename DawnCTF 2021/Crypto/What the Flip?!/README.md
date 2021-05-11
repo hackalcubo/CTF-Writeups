@@ -83,8 +83,8 @@ p.recv()
 leaked = p.recvline().decode().strip().split(": ")[1]
 log.info(f"Leaked ciphertext: {leaked}")
 
-dec_b = int(leaked[:2], 16) ^ int("0x62", 16)
-enc_a = hex(dec_b  ^ int("0x61", 16))
+dec = int(leaked[:2], 16) ^ int("0x62", 16)
+enc_a = hex(dec  ^ int("0x61", 16))
 
 new_ciph = enc_a[2:] + leaked[2:]
 log.info(f"New ciphertext:    {new_ciph}")

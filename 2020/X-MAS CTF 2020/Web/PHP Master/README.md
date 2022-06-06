@@ -1,4 +1,4 @@
-![](./../../../assets/images/banner_xmas.png)
+![](./../../assets/banner_xmas.png)
 
 
 

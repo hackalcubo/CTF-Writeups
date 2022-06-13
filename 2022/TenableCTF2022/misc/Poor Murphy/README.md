@@ -6,7 +6,7 @@ Looks like poor Murphy got blasted and all scrambled up. Can you rebuild him?
 
 ## Target:
 
-![](./scrambled.png)
+![](./scrambled.jpg)
 
 ## Difficulty/Points:
 

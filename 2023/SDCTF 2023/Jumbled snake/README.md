@@ -7,7 +7,7 @@
 `sdctf{U_unRav3led_tH3_sn3k!}`
 #
 ## Solution
-Analyzing the source code provided by the challenge, we can see that the output file is the result of replacing each character, present in the `print_flag.py` file (unknown to us), with a charset found randomly from `string.printable`.
+Analyzing the [source code](Attachments/jumble.py) provided by the challenge, we can see that the output file is the result of replacing each character, present in the `print_flag.py` file (unknown to us), with a charset found randomly from `string.printable`.
 
 ```python 
 #! /usr/bin/env python3
@@ -39,7 +39,7 @@ with open(os.path.join(os.path.dirname(__file__), 'print_flag.py')) as src, open
     dst.write(subs(src.read(), key))
 ```
 
-However, what is interesting to note is that in the output file a string taken directly from the `print_flag.py` file is inserted at the head. This information provides us with the starting point for solving this challenge.
+However, what is interesting to note is that in the [output file](Attachments/print_flag.py.enc) a string taken directly from the `print_flag.py` file is inserted at the head. This information provides us with the starting point for solving this challenge.
 
 The idea is to exploit the string known as a pattern to search within the output file so as to find part of the charset used. This is possible because this string, in order for it to be recognized as a `__doc__` attribute of an object, must be surrounded by triple quotes. 
 

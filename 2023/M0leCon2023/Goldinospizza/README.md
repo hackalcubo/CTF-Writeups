@@ -1,11 +1,10 @@
 # Goldinospizza
 <p align="center">
-  <img src="Attachments/Description.png" />
+  <img src="Attachments/Description.PNG" />
 </p>
 
 ## FLAG:
 ptm{🍕 https://youtu.be/lpvT-Fciu-4 don't buy this crap, just make your own... https://www.giallozafferano.com/recipes/Pizza-Margherita.html 🍕}
-#
 
 ## Solution
 I downloaded the [source code](Attachments/goldinospizza.zip) provided by the challenge in the description and I found this python function quite interesting

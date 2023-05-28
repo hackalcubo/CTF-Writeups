@@ -5,7 +5,6 @@
 
 ## FLAG:
 `sdctf{ju5T_3xEc_UR_w4y_0ut!}`
-#
 ## Solution
 The challenge is a simple jail challenge where all commands that `fork`, `vfork`, or `clone` are filtered out as can be seen in the provided [script](Attachments/nofork.py).
 
@@ -43,7 +42,7 @@ user@NSJAIL:/home/user$ ls
 bash: fork: Operation not permitted
 user@NSJAIL:/home/user$ cd 
 flag.txt       nofork.py      run-nsjail.sh 
-``` 
+```
 
 So I looked for possible commands to run
 

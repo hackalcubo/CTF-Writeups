@@ -5,7 +5,6 @@
 
 ## FLAG:
 `sdctf{U_unRav3led_tH3_sn3k!}`
-#
 ## Solution
 Analyzing the [source code](Attachments/jumble.py) provided by the challenge, we can see that the output file is the result of replacing each character, present in the `print_flag.py` file (unknown to us), with a charset found randomly from `string.printable`.
 
@@ -124,7 +123,7 @@ Found pattern at index 347: 93 93 93 121 56 80 112 32 88 9 37 68 83 108 88 71 69
 
 POSITION OF MISSING CHAR
 [0, 1, 3, 7, 11, 23, 37, 38, 50, 55, 58, 59, 61, 62, 67, 71, 73, 74, 75, 78, 81, 83, 85, 90, 91, 92, 94, 95, 107, 109, 111, 130, 139, 141, 142, 143, 144, 154, 155, 157, 165, 166, 167, 169, 170, 171, 172, 174, 175, 176, 178, 179, 180, 181, 183, 184, 185, 186, 187, 189, 190, 191, 193, 194, 195, 196, 197, 199, 200, 201, 202, 203, 205, 206, 207, 211, 250, 284, 285, 293, 294, 303, 317, 318, 319, 335, 340, 342, 425, 453, 458, 466, 467, 468, 469, 482, 483, 496, 506, 507, 508, 518, 530, 541, 542, 543, 544]
-``` 
+```
 
 But the output contains characters that do not fit into the partial charset found, for this reason those that could be known have been added by hand.
 
@@ -223,4 +222,4 @@ def decode_flag(code):
 if __name__ == "__main__":
     check()
     print(decode_flag(coded_flag))
-``` 
+```

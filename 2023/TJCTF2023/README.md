@@ -3,7 +3,7 @@
   <img src="assets/banner.png" />
 </p>
 
-Writeups of the challenges proposed on [SDCTF2023](https://ctf.sdc.tf/).
+Writeups of the challenges proposed on [TJCTF 2023](https://ctf.tjctf.org/).
 
 <div align="center">
 
@@ -12,7 +12,11 @@ Writeups of the challenges proposed on [SDCTF2023](https://ctf.sdc.tf/).
 | 1 | WEB | [hi](hi/README.md) | 4 |
 | 2 | WEB | [swill](swill/README.md) | 7 |
 | 3 | WEB | [Outdated](Outdated/README.md) | 23 |
-| 4 | MISC | [Gish](Gish/README.md) | 62 |
-| 5 | FORENSIC | [Beep-boop-robot](Beep-boop-robot/README.md) | 6 |
+| 4 | WEB | [complainer](complainer/README.md) | 226 |
+| 5 | WEB | [notes](notes/README.md) | 67 |
+| 6 | WEB | [yolo](yolo/README.md) | 93 |
+| 7 | FORENSIC | [miniscule](miniscule/README.md) | 190 |
+| 8 | MISC | [Gish](Gish/README.md) | 62 |
+| 9 | FORENSIC | [Beep-boop-robot](Beep-boop-robot/README.md) | 6 |
 
 </div>

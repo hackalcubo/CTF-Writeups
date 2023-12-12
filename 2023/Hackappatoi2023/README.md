@@ -7,8 +7,8 @@ Writeups of the challenges proposed on [Hackappatoi CTF2023](https://hctf.hackap
 
 <div align="center">
 
-| **#** | **Category** | **Writeup** | **Points** |  
-|:---:|:---:|---|:---:|-----|-----|
+| **#** | **Category** | **Writeup** | **Points** |
+|:---:|:---:|---|:---:|
 | 1 | WEB | [President](President/README.md) | 100 | 
 | 2 | MISC | [Ghost-Image](Ghost-Image/README.md) | 100 |
 | 3 | MISC | [Escape-From-Italy](Escape%20From%20Italy/README.md) | 100 |

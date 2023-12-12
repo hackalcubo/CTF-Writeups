@@ -10,4 +10,6 @@
 
 the challenge is presented with a simple, very heavy web page that loads css styles. By playing with the source code downloaded on the local machine, I made the page render the hidden style part in time and by doing continuous zooms on the page the flag appears like this:
 
-![img](Attachments\flag.jpg)
+<p align="center">
+  <img src="Attachments/flag.jpg" />
+</p>
